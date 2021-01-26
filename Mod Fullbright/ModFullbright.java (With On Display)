@@ -1,0 +1,46 @@
+package clientname.mods.impl;
+
+import clientname.gui.hud.ScreenPosition;
+import clientname.mods.ModDraggable;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.settings.GameSettings;
+
+public class ModFullbright extends ModDraggable {
+
+	private ScreenPosition pos;
+
+	public ModFullbright() {
+		Minecraft.getMinecraft().gameSettings.gammaSetting = 10;
+	}
+
+	@Override
+	public int getWidth() {
+		return font.getStringWidth("[Fullbright On]");
+	}
+
+	@Override
+	public int getHeight() {
+		return font.FONT_HEIGHT;
+	}
+
+	@Override
+	public void render(ScreenPosition pos) {
+		font.drawString("[Fullbright On]", pos.getAbsoluteX(), pos.getAbsoluteY(), -1);
+	}
+	
+	@Override
+	public void renderDummy(ScreenPosition pos) {
+		font.drawString("[Fullbright On]", pos.getAbsoluteX(), pos.getAbsoluteY(), -1);
+	}
+
+	@Override
+	public void save(ScreenPosition pos) {
+		this.pos = pos;;
+	}
+
+	@Override
+	public ScreenPosition load() {
+		return pos;
+	}
+	
+}
