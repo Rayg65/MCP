@@ -5,7 +5,7 @@
                             break;
                         case EAT:
                         case DRINK:
-                            this.func_178104_a(entityplayersp, partialTicks);
+                            this.func_178104_a(abstractclientplayer, partialTicks);
                             this.transformFirstPersonItem(f, f1);
                             break;
                         case BLOCK:
@@ -15,6 +15,6 @@
                             break;
                         case BOW:
                             this.transformFirstPersonItem(f, f1);
-                            this.func_178098_a(partialTicks, entityplayersp);
+                            this.func_178098_a(partialTicks, abstractclientplayer);
                 	  }
                 }
